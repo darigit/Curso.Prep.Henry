@@ -90,10 +90,10 @@ function tienenMismaLongitud(str1, str2) {
   // De lo contrario, devuelve "false"
   // Tu código:
   var bol = true;
-  if(str1 === str2){
+  if(str1.length == str2.length){
     return bol;
   }else{
-    return !bol;
+    return false;
   }
 }
 
@@ -126,8 +126,8 @@ function obtenerResto(x, y) {
   // Tu código:
   var resto=0;
   
-  if(divide(x,y)!=0){
-    resto = x % y;
+  if(y!=0){
+    return resto = x % y;
   }else
 {
   return resto;
@@ -151,11 +151,10 @@ function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  var esImpar = true;
-  var esPar=false;
+  
   if (esPar(num)){
-    return esPar;
-  }else{return esImpar}
+    return false;
+  }else{return true}
 }
 
 function elevarAlCuadrado(num) {
@@ -177,11 +176,12 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  var calculo =num;
+  var calculo =1;
   while (exponent !=0){
     calculo = calculo * num;
     exponent--;
   }
+  return calculo;
 }
 
 function redondearNumero(num) {
@@ -207,16 +207,30 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  var num_Positivo = "Es positivo";
-  var num_Negativo = "Es negativo";
-  var aux = Math.sign(numero);
-  return aux > 0 ?  num_Positivo : num_Negativo; 
+ 
+  
+      if (Math.sign(numero) == 1){
+            return "Es positivo"
+      } else
+        if (Math.sign(numero) == -1){
+          return "Es negativo"
+        }else
+         if (Math.sign(numero) == 0){
+          return false
+         }
+        
 }
 
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
+  
+
+  for (i=0;i<str.length-1;i++) { 
+   	str = str + str.charAt(i)
+}
+  return str + '!';
 }
 
 function combinarNombres(nombre, apellido) {
@@ -225,15 +239,15 @@ function combinarNombres(nombre, apellido) {
   // Tu código:
   
   var result = ""
-
+  var result1 = ""
   for (i=0;i<nombre.length-1;i++) { 
-   	result += nombre.charAt(i) 
+   	result = result + nombre.charAt(i) 
 }
-  result += "-"
+  result = result + " "
   for (i=0;i<apellido.length-1;i++) { 
-    result += apellido.charAt(i) 
+    result1 = result1 + apellido.charAt(i) 
 }
-  return result;
+  return result+result1;
 }
 
 function obtenerSaludo(nombre) {
