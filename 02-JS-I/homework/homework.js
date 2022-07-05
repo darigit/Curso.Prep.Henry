@@ -10,13 +10,13 @@ const nuevoNum = 1234;
 const nuevoBool = true;
 
 // Resuelve el siguiente problema matemático:
-const nuevaResta = 10 - null === 5;
+const nuevaResta = 10 - 5 === 5;
 
 // Resuelve el siguiente problema matemático:
-const nuevaMultiplicacion = 10 * null === 40 ;
+const nuevaMultiplicacion = 10 * 4 === 40 ;
 
 // Resuelve el siguiente problema matemático:
-const nuevoModulo = 21 % 5 === null;
+const nuevoModulo = 21 % 5 === 1;
 
 
 // En los próximos 22 problemas, deberás completar la función.
@@ -226,10 +226,6 @@ function agregarSimboloExclamacion(str) {
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
   
-
-  for (i=0;i<str.length-1;i++) { 
-   	str = str + str.charAt(i)
-}
   return str + '!';
 }
 
@@ -238,29 +234,17 @@ function combinarNombres(nombre, apellido) {
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
   
-  var result = ""
-  var result1 = ""
-  for (i=0;i<nombre.length-1;i++) { 
-   	result = result + nombre.charAt(i) 
-}
-  result = result + " "
-  for (i=0;i<apellido.length-1;i++) { 
-    result1 = result1 + apellido.charAt(i) 
-}
-  return result+result1;
+  
+  return nombre+" "+apellido;
 }
 
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  hola = "hola"
-  result = ""
-  for (i=0;i<nombre.length-1;i++) { 
-    result += apellido.charAt(i)
-} 
-result += "-"
-return result +=hola;
+   
+   
+  return "Hola"+" "+nombre+"!";
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
@@ -274,8 +258,8 @@ function obtenerAreaRectangulo(alto, ancho) {
 function retornarPerimetro(lado){
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
-  var perimetro = 0;
-  return perimetro = lado * lado;
+  
+  return  4 * lado;
 }
 
 
@@ -304,12 +288,12 @@ function esVocal(letra){
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
   if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
-    console.log('Es vocal')
-   } else 
+    return 'Es vocal'
+   } else{
+    return 'Dato incorrecto'
+   }
     if (typeof letra  === 'string' & letra.length !== 1) {
-   console.log('Dato incorrecto')
-   }else{
-    console.log('Datos Incorrectos')
+    console.log ('Dato incorrecto')
    }
 }
 
