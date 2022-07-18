@@ -56,11 +56,17 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-   palabras.forEach(element => {
-   
-      palabras[element] = palabras[element]+" ";
-  });
-  return palabras;
+  var string = '';
+  i = 0;
+  longitud = obtenerLargoDelArray(palabras)
+  do {
+    if (i=0) string = string + palabras[i]
+    else
+    string = string + ''+ palabras[i];
+      i++;
+      
+  } while (i < longitud);
+  return string;
 }
 
 
@@ -114,7 +120,14 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-
+  
+  var producto = 1;
+  if (arguments.length ==0) return 0
+  if (arguments.length == 1) return arguments[0] 
+  else {
+    for (var i=0; i < arguments.length; i++)  {producto = producto * arguments[i]};
+    return producto;
+  }  
 }
 
 
@@ -170,32 +183,32 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if (typeof n !== 'number' || !Number.n.isInteger(n)){
-    return false;
-  }else
-     if (n < 0) return false;
-     else{
-      nuevoArray =  [...'$(n)'].map(c=>parseInt(c)); //  Genero un arreglo de numeros
-      if (nuevoArray[0]=9){return true } 
-     }
-}
+ 
+  output = [],
+  sNumber = n.toString();
+
+for (var i = 0, len = sNumber.length; i < len; i += 1) {
+  output.push(+sNumber.charAt(i));
+} 
+    if (output[0]==9) return true
+    else return false;
+   
+  }
 
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var indicador=true;
-  if (obtenerLargoDelArray(arreglo>0)){
-    aux = elemento[0];
+    var indicador=true;
+    aux = arreglo[0];
+    tamaño = obtenerLargoDelArray(arreglo)
     i=0;
-    while (i<=obtenerLargoDelArray(arreglo)-1 && arreglo[i]==aux)
+    while (i<tamaño && arreglo[i]==aux)
     {i++}
-    if (i !== obtenerLargoDelArray(arreglo) ){
-          indicador = false;
-    }else return indicador;
-  }else 
-  return false
+    if (i==tamaño){
+          return indicador;
+    }else return indicador=false;
 } 
 
 function mesesDelAño(array) {
@@ -238,21 +251,23 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
   nuevoArray=[];
-  interar = 0;
+  iterar = 0;
   bol = true;
-  suma=0;
-  while (interar<10 && bol){
-    suma = numero;
-    if (suma == interar) {bol = false}
+  suma=numero;
+  while (iterar<10){
+    if (suma == iterar) {
+      bol=false;
+      break}
     else{
       numero = suma+2;
+      suma = numero;
       nuevoArray.push(numero);
     }
-    interar++;
+    iterar++;
   }
-  if (bol = false ) return "Se interrumpió la ejecución"
-  else return nuevoArray;
-}
+  if (bol) return nuevoArray;
+  else return "Se interrumpió la ejecución"    
+}     
 
 
 function continueStatement(numero) {
@@ -263,18 +278,15 @@ function continueStatement(numero) {
   //Pista: usá el statement 'continue'
   // Tu código:
   nuevoArray=[];
-  interar = 1;
+  interar = 0;
   suma=0;
   while (interar<10){
+    interar++;
+    if (interar == 5) continue;
     
-    if (interar == 5) {continue}
-    else{
       suma = numero;
       numero = suma+2;
       nuevoArray.push(numero);
-      interar++;
-    }
-   
   }
   return nuevoArray;
 }
