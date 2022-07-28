@@ -1,0 +1,22 @@
+ h1 {color:darkolivegreen;}
+    h3{ color: rgb(80, 255, 188)}
+    p{color:goldenrod;}
+    li{color:aquamarine;}
+    #thirdDiv{
+        width: 500;
+        height: 600;
+        background-color:antiquewhite;
+        padding: 50px;
+        border:20px;
+        
+    }
+
+    div.divClass{
+        color:coral;
+        background-color:cadetblue;
+    }
+
+    #spanId{
+        height: 10px;
+        margin: 50px;
+    }
